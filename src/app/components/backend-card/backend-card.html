@@ -1,0 +1,43 @@
+<div class="backend-card">
+  <div class="card-header">
+    <div class="service-info">
+      <h3 class="service-name">{{backend.name}}</h3>
+      <p class="service-description">{{backend.description}}</p>
+    </div>
+    <span class="status-badge" [ngClass]="getStatusClass()">
+      {{backend.status}}
+    </span>
+  </div>
+
+  <div class="service-details">
+    <div class="detail-row">
+      <span class="detail-label">Versão:</span>
+      <span class="detail-value">{{backend.version}}</span>
+    </div>
+    
+    <div class="detail-row">
+      <span class="detail-label">Ambiente:</span>
+      <span class="detail-value">
+        {{backend.environment}}
+      </span>
+    </div>
+    
+    <div class="detail-row">
+      <span class="detail-label">APIs:</span>
+      <span class="detail-value">{{backend.apis}}</span>
+    </div>
+    
+    <div class="detail-row">
+      <span class="detail-label">Uptime:</span>
+      <span class="detail-value uptime">{{backend.uptime}}</span>
+    </div>
+  </div>
+
+  <button class="view-details-btn" (click)="viewDetails()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+      <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+    </svg>
+    Ver detalhes
+  </button>
+</div>
