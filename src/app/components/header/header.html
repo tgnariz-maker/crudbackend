@@ -1,53 +1,58 @@
-<header class="modern-header">
+<mat-toolbar class="modern-header">
   <div class="header-container">
     <!-- Brand Section -->
     <div class="header-brand">
-      <div class="brand-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-          <path d="M2 17l10 5 10-5"></path>
-          <path d="M2 12l10 5 10-5"></path>
-        </svg>
-      </div>
+      <mat-icon class="brand-icon">layers</mat-icon>
       <div class="brand-content">
         <h1 class="brand-title">SEFAZ Portal</h1>
         <p class="brand-subtitle">Sistema de APIs da Secretaria da Fazenda</p>
       </div>
     </div>
 
-    <!-- Only Secondary Actions -->
+    <!-- Header Actions -->
     <div class="header-actions">
       <div class="secondary-actions">
-        <button class="icon-btn" (click)="openNotifications()" title="Notificações">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
-            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-          </svg>
-          <span class="notification-badge">3</span>
+        <button mat-icon-button 
+                (click)="openNotifications()" 
+                matTooltip="Notificações"
+                matBadge="3"
+                matBadgeColor="accent">
+          <mat-icon>notifications</mat-icon>
         </button>
 
-        <button class="icon-btn" (click)="openSettings()" title="Configurações">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <circle cx="12" cy="12" r="3"></circle>
-            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-          </svg>
+        <button mat-icon-button 
+                (click)="openSettings()" 
+                matTooltip="Configurações">
+          <mat-icon>settings</mat-icon>
         </button>
 
-        <div class="user-profile">
-          <button class="profile-btn" (click)="openProfile()" title="Perfil do Usuário">
-            <div class="profile-avatar">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-              </svg>
-            </div>
-            <div class="profile-info">
-              <span class="profile-name">Admin SEFAZ</span>
-              <span class="profile-role">Administrador</span>
-            </div>
+        <button mat-button 
+                [matMenuTriggerFor]="profileMenu"
+                class="profile-btn">
+          <mat-icon>account_circle</mat-icon>
+          <span class="profile-info">
+            <span class="profile-name">Admin SEFAZ</span>
+            <span class="profile-role">Administrador</span>
+          </span>
+          <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+
+        <mat-menu #profileMenu="matMenu">
+          <button mat-menu-item (click)="openProfile()">
+            <mat-icon>person</mat-icon>
+            <span>Meu Perfil</span>
           </button>
-        </div>
+          <button mat-menu-item>
+            <mat-icon>settings</mat-icon>
+            <span>Configurações</span>
+          </button>
+          <mat-divider></mat-divider>
+          <button mat-menu-item>
+            <mat-icon>logout</mat-icon>
+            <span>Sair</span>
+          </button>
+        </mat-menu>
       </div>
     </div>
   </div>
-</header>
+</mat-toolbar>

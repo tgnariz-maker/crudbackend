@@ -1,0 +1,147 @@
+/* ========== MATERIAL CARD OVERRIDES ========== */
+.backend-card {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 12px !important;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease !important;
+  color: white !important;
+}
+
+.backend-card:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* ========== HEADER CUSTOMIZATION ========== */
+::ng-deep .backend-card .mat-mdc-card-header {
+  padding: 1.5rem 1.5rem 1rem !important;
+}
+
+.service-info {
+  flex: 1;
+}
+
+::ng-deep .backend-card .mat-mdc-card-title {
+  color: white !important;
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+::ng-deep .backend-card .mat-mdc-card-subtitle {
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-size: 0.875rem !important;
+}
+
+/* ========== CHIP CUSTOMIZATION ========== */
+::ng-deep .backend-card .mat-mdc-chip-set {
+  margin: 0 !important;
+}
+
+::ng-deep .backend-card .mat-mdc-chip {
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  border-radius: 16px !important;
+  height: 32px !important;
+}
+
+::ng-deep .backend-card .mat-mdc-chip.status-healthy {
+  background-color: rgba(34, 197, 94, 0.2) !important;
+  color: #22c55e !important;
+  border: 1px solid rgba(34, 197, 94, 0.3) !important;
+}
+
+::ng-deep .backend-card .mat-mdc-chip.status-warning {
+  background-color: rgba(251, 191, 36, 0.2) !important;
+  color: #fbbf24 !important;
+  border: 1px solid rgba(251, 191, 36, 0.3) !important;
+}
+
+::ng-deep .backend-card .mat-mdc-chip.status-error {
+  background-color: rgba(239, 68, 68, 0.2) !important;
+  color: #ef4444 !important;
+  border: 1px solid rgba(239, 68, 68, 0.3) !important;
+}
+
+::ng-deep .backend-card .mat-mdc-chip.status-unknown {
+  background-color: rgba(148, 163, 184, 0.2) !important;
+  color: #94a3b8 !important;
+  border: 1px solid rgba(148, 163, 184, 0.3) !important;
+}
+
+/* ========== CONTENT CUSTOMIZATION ========== */
+::ng-deep .backend-card .mat-mdc-card-content {
+  padding: 0 1.5rem !important;
+}
+
+.service-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.detail-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.detail-icon {
+  color: #64b5f6 !important;
+  font-size: 1.125rem !important;
+  width: 1.125rem !important;
+  height: 1.125rem !important;
+  flex-shrink: 0;
+}
+
+.detail-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  min-width: 4rem;
+}
+
+.detail-value {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: white;
+}
+
+.detail-value.uptime {
+  color: #22c55e;
+}
+
+/* ========== DIVIDER CUSTOMIZATION ========== */
+::ng-deep .backend-card .mat-divider {
+  border-top-color: rgba(255, 255, 255, 0.1) !important;
+  margin: 1rem 0 !important;
+}
+
+/* ========== ACTIONS CUSTOMIZATION ========== */
+::ng-deep .backend-card .mat-mdc-card-actions {
+  padding: 1rem 1.5rem 1.5rem !important;
+}
+
+::ng-deep .backend-card .mat-mdc-raised-button {
+  background-color: #3f51b5 !important;
+  color: white !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  padding: 0.5rem 1.5rem !important;
+  box-shadow: 0 2px 8px rgba(63, 81, 181, 0.3) !important;
+}
+
+::ng-deep .backend-card .mat-mdc-raised-button:hover {
+  background-color: #3949ab !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(63, 81, 181, 0.4) !important;
+}
+
+::ng-deep .backend-card .mat-mdc-raised-button .mat-icon {
+  margin-right: 0.5rem !important;
+  font-size: 1rem !important;
+}
