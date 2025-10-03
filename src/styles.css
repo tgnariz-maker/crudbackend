@@ -1,3 +1,6 @@
+/* Angular Material Imports */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
 /* styles.css - Global Styles Corrigido */
 
 /* Reset Global */

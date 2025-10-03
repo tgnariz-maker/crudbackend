@@ -12,14 +12,7 @@ import { HeaderComponent } from './components/header/header';
     RouterModule,
     HeaderComponent
   ],
-  template: `
-    <div class="app-container">
-      <app-header></app-header>
-      <main class="main-content">
-        <router-outlet></router-outlet>
-      </main>
-    </div>
-  `,
+  templateUrl: './app.html',
   styleUrls: ['./app.css']
 })
 export class AppComponent {

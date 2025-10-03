@@ -1,43 +1,51 @@
-<div class="backend-card">
-  <div class="card-header">
+<mat-card class="backend-card">
+  <mat-card-header>
     <div class="service-info">
-      <h3 class="service-name">{{backend.name}}</h3>
-      <p class="service-description">{{backend.description}}</p>
+      <mat-card-title>{{backend.name}}</mat-card-title>
+      <mat-card-subtitle>{{backend.description}}</mat-card-subtitle>
     </div>
-    <span class="status-badge" [ngClass]="getStatusClass()">
-      {{backend.status}}
-    </span>
-  </div>
+    <mat-chip-set>
+      <mat-chip [ngClass]="getStatusClass()">
+        <mat-icon matChipAvatar>{{getStatusIcon()}}</mat-icon>
+        {{backend.status}}
+      </mat-chip>
+    </mat-chip-set>
+  </mat-card-header>
 
-  <div class="service-details">
-    <div class="detail-row">
-      <span class="detail-label">Versão:</span>
-      <span class="detail-value">{{backend.version}}</span>
+  <mat-card-content>
+    <div class="service-details">
+      <div class="detail-row">
+        <mat-icon class="detail-icon">info</mat-icon>
+        <span class="detail-label">Versão:</span>
+        <span class="detail-value">{{backend.version}}</span>
+      </div>
+      
+      <div class="detail-row">
+        <mat-icon class="detail-icon">public</mat-icon>
+        <span class="detail-label">Ambiente:</span>
+        <span class="detail-value">{{backend.environment}}</span>
+      </div>
+      
+      <div class="detail-row">
+        <mat-icon class="detail-icon">api</mat-icon>
+        <span class="detail-label">APIs:</span>
+        <span class="detail-value">{{backend.apis}}</span>
+      </div>
+      
+      <div class="detail-row">
+        <mat-icon class="detail-icon">schedule</mat-icon>
+        <span class="detail-label">Uptime:</span>
+        <span class="detail-value uptime">{{backend.uptime}}</span>
+      </div>
     </div>
-    
-    <div class="detail-row">
-      <span class="detail-label">Ambiente:</span>
-      <span class="detail-value">
-        {{backend.environment}}
-      </span>
-    </div>
-    
-    <div class="detail-row">
-      <span class="detail-label">APIs:</span>
-      <span class="detail-value">{{backend.apis}}</span>
-    </div>
-    
-    <div class="detail-row">
-      <span class="detail-label">Uptime:</span>
-      <span class="detail-value uptime">{{backend.uptime}}</span>
-    </div>
-  </div>
+  </mat-card-content>
 
-  <button class="view-details-btn" (click)="viewDetails()">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-      <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
-      <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
-    </svg>
-    Ver detalhes
-  </button>
-</div>
+  <mat-divider></mat-divider>
+
+  <mat-card-actions align="end">
+    <button mat-raised-button color="primary" (click)="viewDetails()">
+      <mat-icon>visibility</mat-icon>
+      Ver detalhes
+    </button>
+  </mat-card-actions>
+</mat-card>
